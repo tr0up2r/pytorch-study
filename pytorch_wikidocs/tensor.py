@@ -67,5 +67,21 @@ m2 = torch.FloatTensor([2, 2])
 print(m1 + m2)
 
 # 2 x 1 Vector + 1 x 2 Vector
-m1 = torch.FloatTensor([1, 2])
-m2 = torch.FloatTensor([3], [4])
+# 원래 수학적으로는 덧셈 불가, but 두 벡터의 크기를 (2, 2)로 변경하여 덧셈 수행함.
+m1 = torch.FloatTensor([[1, 2]])
+m2 = torch.FloatTensor([[3], [4]])
+print(m1 + m2, '\n')
+
+
+# Mean(평균)
+t = torch.FloatTensor([1, 2])
+print(t.mean(), '\n')
+
+t = torch.FloatTensor([[1, 2], [3, 4]])
+print(t)
+print(t.mean(), '\n')
+
+# 1과 3의 평균을 구하고, 2와 4의 평균을 구해서 출력.
+# 행렬에서 열만 남기겠다는 의미 (?)
+print('dim=0 mean :', t.mean(dim=0))
+print('dim=1 mean :', t.mean(dim=1))
